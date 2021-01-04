@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ui/views/components/actions/actions.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/views/components/infos/infos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/views/components/bpm_vol/bpm_vol.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/views/main/main.gd" type="Script" id=4]
+[ext_resource path="res://ui/views/components/pattern_layout/pattern_layout.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/views/components/pattern_layout/loop_layout.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/views/components/pattern_layout/drum_layout.tscn" type="PackedScene" id=7]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxMain" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxTop" type="HBoxContainer" parent="VBoxMain"]
+margin_right = 1600.0
+margin_bottom = 78.0
+
+[node name="PanelTop" type="PanelContainer" parent="VBoxMain/HBoxTop"]
+margin_right = 1600.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxMain/HBoxTop/PanelTop"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1598.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Actions" parent="VBoxMain/HBoxTop/PanelTop/HBoxContainer" instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_right = 132.0
+margin_bottom = 50.0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+
+[node name="Bpm_Vol" parent="VBoxMain/HBoxTop/PanelTop/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 436.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 1
+
+[node name="Infos" parent="VBoxMain/HBoxTop/PanelTop/HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 440.0
+margin_right = 1596.0
+margin_bottom = 56.0
+
+[node name="HBoxMain" type="HBoxContainer" parent="VBoxMain"]
+margin_top = 82.0
+margin_right = 1600.0
+margin_bottom = 830.0
+
+[node name="PanelMain" type="PanelContainer" parent="VBoxMain/HBoxMain"]
+margin_right = 1600.0
+margin_bottom = 748.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxMain/HBoxMain/PanelMain"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1598.0
+margin_bottom = 746.0
+
+[node name="LoopLayout" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 1596.0
+
+[node name="Track1" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 40.0
+margin_right = 1064.0
+margin_bottom = 232.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+intrument_color = Color( 0.705882, 0.388235, 0.388235, 1 )
+instrument_dir = "res://assets/sounds/chords"
+
+[node name="Track2" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 236.0
+margin_right = 1064.0
+margin_bottom = 428.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+intrument_color = Color( 0.803922, 0.835294, 0.321569, 1 )
+instrument_dir = "res://assets/sounds/synth"
+
+[node name="Track3" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 432.0
+margin_right = 1064.0
+margin_bottom = 624.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+intrument_color = Color( 0.454902, 0.690196, 0.254902, 1 )
+instrument_dir = "res://assets/sounds/synth"
+
+[node name="Rythm1" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 628.0
+margin_right = 1596.0
+margin_bottom = 664.0
+intrument_color = Color( 0.686275, 0.254902, 0.65098, 1 )
+instrument_dir = "res://assets/sounds/drums/hihat"
+
+[node name="Rythm2" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 668.0
+margin_right = 1596.0
+margin_bottom = 704.0
+intrument_color = Color( 0.462745, 0.447059, 0.513726, 1 )
+instrument_dir = "res://assets/sounds/drums/kick"
+
+[node name="Rythm3" parent="VBoxMain/HBoxMain/PanelMain/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 708.0
+margin_right = 1596.0
+margin_bottom = 744.0
+intrument_color = Color( 0.380392, 0.419608, 0.588235, 1 )
+instrument_dir = "res://assets/sounds/drums/kick"

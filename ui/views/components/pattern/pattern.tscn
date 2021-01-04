@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/views/components/pattern/pattern.gd" type="Script" id=1]
+
+[node name="pattern" type="Control"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+intrument_color = Color( 0.47451, 0.47451, 0.47451, 1 )
+current_time_color = Color( 0.45098, 0.45098, 0.45098, 0.627451 )
+
+[node name="liste_notes" type="Node" parent="."]
+
+[node name="options_menu" type="PopupMenu" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+items = [ "Copy", null, 0, false, false, 0, 0, null, "", false, "Cut", null, 0, false, false, 1, 0, null, "", false, "Paste", null, 0, false, false, 2, 0, null, "", false, "Delete", null, 0, false, false, 3, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_exited" from="." to="." method="_on_pattern_mouse_exited"]
+[connection signal="id_pressed" from="options_menu" to="." method="_on_options_menu_id_pressed"]

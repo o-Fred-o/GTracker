@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/views/components/note/note.gd" type="Script" id=1]
+
+[node name="note" type="Control"]
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 10, 10 )
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+intrument_color = Color( 0.47451, 0.027451, 0.027451, 1 )
+base_color = Color( 1, 1, 1, 1 )
+note_size = 12
+
+[node name="ReferenceRect" type="ColorRect" parent="."]
+margin_right = 11.0
+margin_bottom = 11.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="ReferenceRect" to="." method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="ReferenceRect" to="." method="_on_ColorRect_mouse_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Clav Chord CMaj.wav-f7ee6b2b04faeba1c76a4174d3eaaaf7.sample"
+
+[deps]
+
+source_file="res://assets/sounds/chords/Clav Chord CMaj.wav"
+dest_files=[ "res://.import/Clav Chord CMaj.wav-f7ee6b2b04faeba1c76a4174d3eaaaf7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

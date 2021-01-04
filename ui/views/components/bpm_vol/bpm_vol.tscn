@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/icons/baseline_volume_up_white_18dp.png" type="Texture" id=3]
+[ext_resource path="res://ui/views/components/bpm_vol/bpm_vol.gd" type="Script" id=4]
+
+[node name="Informations" type="HBoxContainer"]
+margin_left = 685.0
+margin_right = 1024.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bpm_Vol" type="VBoxContainer" parent="."]
+margin_right = 167.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Bpm" type="HBoxContainer" parent="Bpm_Vol"]
+margin_right = 167.0
+margin_bottom = 16.0
+
+[node name="SpeedSlider" type="HSlider" parent="Bpm_Vol/Bpm"]
+margin_right = 167.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+max_value = 250.0
+value = 115.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="HBoxContainer" parent="Bpm_Vol"]
+margin_top = 20.0
+margin_right = 167.0
+margin_bottom = 42.0
+
+[node name="VolumeSlider" type="HSlider" parent="Bpm_Vol/Volume"]
+margin_right = 81.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -100.0
+
+[node name="VolMute" type="Button" parent="Bpm_Vol/Volume"]
+visible = false
+margin_left = 68.0
+margin_right = 98.0
+margin_bottom = 26.0
+icon = ExtResource( 3 )
+
+[node name="VolumeLabel" type="Label" parent="Bpm_Vol/Volume"]
+margin_left = 85.0
+margin_right = 167.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+
+[node name="Info" type="VBoxContainer" parent="."]
+margin_left = 171.0
+margin_right = 339.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+
+[node name="CurrentTimeLabel" type="Label" parent="Info"]
+margin_right = 168.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+
+[node name="GlobalTimeLabel" type="Label" parent="Info"]
+margin_top = 26.0
+margin_right = 168.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="SpeedLabel" type="Label" parent="Info"]
+margin_top = 52.0
+margin_right = 168.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="Bpm_Vol/Bpm/SpeedSlider" to="." method="_on_SpeedSlider_value_changed"]
+[connection signal="value_changed" from="Bpm_Vol/Volume/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="button_down" from="Bpm_Vol/Volume/VolMute" to="." method="_on_VolMute_button_down"]

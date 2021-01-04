@@ -8,16 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
-
 [application]
 
 config/name="GTracker"
-run/main_scene="res://ui/main.tscn"
+run/main_scene="res://ui/views/main/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://common/autoloads/global.gd"
+AudioManager="*res://common/autoloads/audio_manager.gd"
+
+[display]
+
+window/size/width=1600
+window/size/height=960
+window/size/resizable=false
+
+[gui]
+
+theme/custom="res://ui/themes/dark/theme.tres"
 
 [rendering]
 

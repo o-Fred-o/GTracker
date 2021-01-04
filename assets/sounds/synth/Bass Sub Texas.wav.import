@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bass Sub Texas.wav-6bbd0f306e5cd6bafac9caa244cc9ba8.sample"
+
+[deps]
+
+source_file="res://assets/sounds/synth/Bass Sub Texas.wav"
+dest_files=[ "res://.import/Bass Sub Texas.wav-6bbd0f306e5cd6bafac9caa244cc9ba8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
